@@ -1,0 +1,22 @@
+[
+    {
+        "id":"1",
+        "label":"Home",
+        "url": ""
+    },
+    {
+        "id":"2",
+        "label":"Numeri utili",
+        "url": "/numeri-utili"
+    },
+    {
+        "id":"3",
+        "label":"Contatti personali",
+        "url": "/contatti-personali"
+    },
+    {
+        "id":"4",
+        "label":"Persone",
+        "url": "/persone"
+    }
+]

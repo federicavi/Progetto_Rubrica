@@ -1,0 +1,19 @@
+<h1 class="text-center text-uppercase">Numeri Utili</h1>
+<br><br>
+<button type="button" class="btn btn-danger btn-lg position-absolute top-1 end-0">+</button>
+<br><br>
+<div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col" *ngFor="let items of nomiColonne ">{{items}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let row of numeriUtiliBackEnd">
+          <td *ngFor="let col of nomiColonne">{{ row[col] }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+<router-outlet></router-outlet>
