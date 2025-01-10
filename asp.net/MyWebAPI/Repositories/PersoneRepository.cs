@@ -31,7 +31,8 @@ namespace Prova_Rubrica.Repositories
 
         public async Task<IEnumerable<Persone?>> GetAll()
         {
-            return await _context.Persones.ToListAsync();       
+            var listaPersone = await _context.Persones.ToListAsync();
+            return listaPersone;   
         }
 
         public async Task<Persone?> GetById(int id)

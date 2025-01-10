@@ -23,7 +23,7 @@ export class NumeriUtiliComponent {
     this.numeriUtiliService.getAllNumeriUtili().subscribe( numeri =>{
       this.numeriUtiliBackEnd = numeri;
       if (numeri.length > 0) {
-        this.nomiColonne = Object.keys(numeri[0]);
+        this.nomiColonne = Object.keys(numeri[0]); //Object.keys(numeri[0]): Legge le chiavi del primo oggetto nell'array numeri..
         console.log('nomi colonne: ' + this.nomiColonne);
       }
       

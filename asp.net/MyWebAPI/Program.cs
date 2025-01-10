@@ -5,6 +5,7 @@ using Prova_Rubrica.Models;
 using Prova_Rubrica.Repositories;
 using Prova_Rubrica.Services;
 using System.Configuration;
+using System.Text.Json.Serialization;
 
 namespace Prova_Rubrica
 {
@@ -23,11 +24,16 @@ namespace Prova_Rubrica
                 options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
             // Add services to the container.
-            builder.Services.AddControllers();
+            builder.Services.AddControllers().AddJsonOptions(options =>
+            {
+                options.JsonSerializerOptions.DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull;
+            }); 
+            //AddJsonOptions => permette che la proprietà riferita alla foreign key non verrà inclusa nel JSON inviato al frontend
 
             // Registrazione dei repository specifici
             builder.Services.AddScoped<IService, Service>();
             builder.Services.AddScoped<INumeriUtiliRepository, NumeriUtiliRepository>();
+            builder.Services.AddScoped<IPersoneRepository, PersoneRepository>();
 
             // Configurazione CORS con indirizzo url Angular
 

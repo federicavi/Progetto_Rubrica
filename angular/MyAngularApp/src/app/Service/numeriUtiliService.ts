@@ -10,12 +10,12 @@ import { INumeriUtiliBackEnd } from '../Interfacce/numeriUtiliBackEnd';
   export class NumeriUtiliService{
 
     private readonly baseUrl = ' https://localhost:7026/api/NumeriUtili';
-    
+    //indirizzo swagger
 
     constructor (private readonly http : HttpClient){}
 
     getAllNumeriUtili() : Observable<INumeriUtiliBackEnd[]>{
-        const url =`${this.baseUrl}/GetAll`
+        const url =`${this.baseUrl}/GetAll`;
         return this.http.get<INumeriUtiliBackEnd[]>(url);
     }
 }
